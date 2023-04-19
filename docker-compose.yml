@@ -1,0 +1,30 @@
+services:
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./static_files:/var/www/content/
+    ports:
+      - "80:80"
+
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_storage:/data
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: adminadmin
+    command: server --console-address ":9001" /data
+
+  minio_mc:
+    image: minio/mc
+    volumes:
+      - mc_storage:/root/.mc
+
+volumes:
+  minio_storage:
+  mc_storage:
