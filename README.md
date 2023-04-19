@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Vem ai...
+Um estudo simples de como servir via Nginx, arquivos estáticos localizados num bucket da da vida. Neste exemplo usei o Minio como bucket.
 
 ## Criando o bucket
 
