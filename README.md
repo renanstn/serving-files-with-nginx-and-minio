@@ -6,7 +6,9 @@ Vem ai...
 
 ## Criando o bucket
 
-1. Utilize o serviço `minio_mc` no docker-compose para adicionar as credenciais do Minio:
+Utilize o serviço `minio_mc` no docker-compose para interagir com o Minio via CLI
+
+1. Adicione as credenciais do Minio:
 
 ```sh
 docker-compose run --rm minio_mc alias set local http://minio:9000 admin adminadmin
